@@ -60,3 +60,5 @@ console.log(organization);
 phrase.splice(3, 0, "my", "little", "friend.");
 console.log(phrase);
 //Output: [ 'Say', 'hello', 'to', 'my', 'little', 'friend' ]
+
+

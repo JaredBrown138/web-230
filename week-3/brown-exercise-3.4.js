@@ -1,6 +1,6 @@
 /*
 ============================================
-; Title:  Exercise 3.2
+; Title:  Exercise 3.4
 ; Author: Professor Krasso, Jared Brown 
 ; Date:   17 December 2017
 ; Modified By: Jared Brown
@@ -15,7 +15,7 @@ const MISMATCH = " do not match!";
 const ITERATIONS = 10;
 
 var header = require('../header.js');
-var headerMsg = header.display("Jared", "Brown", "Exercise 3.2");
+var headerMsg = header.display("Jared", "Brown", "Exercise 3.4");
 console.log(headerMsg + "\n".repeat(2)); 
 
 // test variable

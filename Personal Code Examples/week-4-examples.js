@@ -62,3 +62,8 @@ console.log(phrase);
 //Output: [ 'Say', 'hello', 'to', 'my', 'little', 'friend' ]
 
 
+console.log("\n".repeat(2) + "--- New Output ---" );
+
+var mixedArray = ["Apple", "bear", "Cat", "apple", "Bear", "cat", 13, 3, 58, 7 ];
+mixedArray.sort()
+mixedArray.forEach(x =>{ console.log(x)});

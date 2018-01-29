@@ -1,0 +1,23 @@
+/**
+* Site CSS provided by Professor 
+* Krasso.
+**/
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px;
+}
+
+th {
+    background-color: steelblue;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: lightsteelblue;
+}

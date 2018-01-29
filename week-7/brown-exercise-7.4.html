@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 7.4</title>
+
+    <link rel="stylesheet" href="../site.css">
+
+</head>
+<body>
+    <h1>Computer Components</h1>
+    <table id="componentsTable"></table>
+    <script>
+        /**
+         * The constructor function for the
+         * Component object
+         */ 
+        function Component(id, name, price){
+            this.id = id;
+            this.name = name;
+            this.price = price;
+
+            this.getComponents = function(){
+                var confirm = "\"Are you sure?\"";
+                var componentString = "<tr>" +
+                    "<td>" + this.id + "</td>" +
+                    "<td>" + this.name + "</td>" +
+                    "<td>" + this.price + "</td>" +
+                    "<td> <a href=\'javascript:alert(" + id + ");\'>" +
+                    "EDIT</a> | <a href='javascript:confirm(" + confirm + ");'>DELETE</a>";
+                return componentString;        
+            }
+        }
+        var store = [
+            new Component(1, "Laptop", 1500.99),
+            new Component(2, "Motherboard", 35.70),
+            new Component(3, "Monitor", 174.99),
+            new Component(4, "Mouse", 13.99),
+            new Component(5, "Keyboard", 14.50)
+        ]
+
+        var tableString = "<tr><th>ID</th><th>Name</th><th>Amount</th><th>Functions</th></tr>";
+        store.forEach(v =>{
+            tableString += v.getComponents();
+        });
+        document.getElementById("componentsTable").innerHTML = tableString;    
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 7.3</title>
+    <link rel="stylesheet" href="../site.css">
+</head>
+<body>
+    <div id="list"></div>
+    <script>
+        // document.write() code goes here...
+        var shoppingList = [
+            "Oranges",
+            "Apples",
+            "Pears",
+            "Limes",
+            "Lemons"
+        ]
+        document.write("<h1>SHOPPING LIST v.1</h1>");
+        document.write("<ol>");
+        shoppingList.forEach(v =>{document.write("<li>" + v + "</li>")});
+        document.write("</ol>");
+    </script>
+    <h1>SHOPPING LIST v.2</h1>
+    <table id="shoppingTable"></table>
+    <script>
+        var tableHeading ="<tr><th>Id</th><th>Item</th></tr>"
+        var innerHTMLString = tableHeading; 
+        shoppingList.forEach((v, i, a) => {
+            innerHTMLString += "<tr><td>" + (i + 1) + "</td><td>" + v +
+                "</td></tr>"
+        });
+        document.getElementById("shoppingTable").innerHTML = innerHTMLString;    
+    </script>
+
+</body>
+</html>

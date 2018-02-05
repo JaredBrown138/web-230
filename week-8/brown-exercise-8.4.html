@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 8.4</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../site.css">
+
+    <style type="text/css">
+        #employee tbody tr:hover {
+            cursor: pointer;
+            background-color: #ffff99;
+        }
+    </style>
+</head>
+<body>
+
+<div id="emps"></div>
+
+<script type="text/javascript">
+
+    // employee constructor object
+    function Employee(id, firstName, lastName, title){
+        this.id = id;
+        this.name = {
+            first: firstName,
+            last: lastName
+        };
+        this.title = title; 
+    }
+
+    // employee array
+    var company = [
+        new Employee(1, "Thomas", "Edison", "Software Engineer"), 
+        new Employee(2, "Benjamin", "Franklin", "Programmer"),
+        new Employee(3, "Nikola", "Tesla", "Project Manager"),
+        new Employee(4, "Charles", "Babbage", "Product Manager"),
+        new Employee(5, "Alexander", "Bell", "Business Analyst")
+    ]
+
+    // getEmployee(id) function
+    function getEmployee(id) {
+        var returnString = "";
+        company.forEach((v,i,a) =>{
+            if(v.id == id){
+                returnString = v.id + " " + v.name.first + 
+                    " " + v.name.last + " " + v.title;
+            }
+        });
+        return returnString;
+    }
+    // output string variable
+    var output = "<h1>Employee Listing</h1>";
+        output += "<table id='employee'>";
+        output += "<thead><tr><th>Id</th><th>First Name</th><th>Last Name</th><th>Title</th></tr></thead>";
+        output += "<tbody>";
+    // for loop    
+    company.forEach((v, i, a) =>{
+        output += "<tr>" +
+            "<td>" + v.id + "</td>" +
+            "<td>" + v.name.first + "</td>" +
+            "<td>" + v.name.last + "</td>" +
+            "<td>" + v.title + "</td>" +
+            "</tr>"
+    });
+    output += "</tbody>";
+    output += "</table>";   
+
+    // innerHTML call
+    document.getElementById("emps").innerHTML = output;
+    // jQuery onClick event
+    $(function () {
+        $("table tr").click(function () {
+            var employeeId = $(this).find("td:first").html();
+            alert(getEmployee(employeeId));    
+        })
+    });
+</script>
+</body>
+</html>

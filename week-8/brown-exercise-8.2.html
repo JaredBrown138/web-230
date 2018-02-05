@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 8.2</title>
+
+    <style type="text/css">
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<h1>Shopping List</h1>
+<ul id="fruits"></ul>
+
+<script>
+    const DELIMETER = ":"
+    var fruitArray = [
+        "Oranges",
+        "Apples",
+        "Pears",
+        "Limes",
+        "Lemons"
+    ]
+    var listItems = "";
+    fruitArray.forEach((v,i,a) =>{
+        i += 1; //Increment index so I dont start the list at 0
+        listItems += String.prototype.concat("<li>", i, DELIMETER," ", v, "</li>");
+        //I used String.concat() because it looks more neat that + + + etc.
+    });
+    document.getElementById("fruits").innerHTML = listItems;
+</script>
+
+</body>
+</html>

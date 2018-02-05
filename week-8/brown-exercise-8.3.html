@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Exercise 8.3</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../site.css">
+
+</head>
+<body>
+
+<h2>Toggle Example</h2>
+<p id="content">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius at arcu eget tincidunt.
+    Donec vitae efficitur lacus. Proin ultrices nulla ac tempus vehicula. Suspendisse et mattis leo,
+    vel ultrices mauris. Nulla sagittis, felis ut vehicula ullamcorper, diam purus euismod justo,
+    eget commodo lacus eros sed odio. Fusce tristique lectus a fringilla convallis. Class aptent
+    taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum ut
+    massa lorem. Aliquam ipsum orci, tincidunt suscipit dignissim a, tincidunt sed ante. Curabitur sed
+    felis felis. Vivamus ornare, orci ut varius vehicula, urna velit posuere velit, ut convallis tortor
+    ligula at sapien. Sed ligula nisl, scelerisque vitae metus eget, vestibulum rhoncus nunc.
+</p>
+
+<p id="toggled-content">
+    Vivamus eleifend nisi ut ex aliquam, quis molestie velit imperdiet. Fusce placerat ligula ac
+    cursus pretium. Etiam eget malesuada mauris, eget efficitur odio. Praesent vehicula et massa a
+    semper. Mauris et aliquam ligula. Nulla facilisi. Suspendisse potenti. Nulla tristique metus urna,
+    vitae vestibulum ante iaculis eu. Sed laoreet mollis sem in laoreet. Duis purus purus, lobortis id tortor ac,
+    tincidunt interdum nisi. Ut volutpat justo nec urna porta, id consequat arcu tincidunt. Integer tincidunt
+    gravida bibendum. Morbi tempor ligula non erat maximus, in convallis lorem euismod. Mauris eu justo a ipsum
+    gravida congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+    Mauris blandit efficitur rutrum.
+</p>
+
+<button id="toggle">Toggle Content</button>
+
+
+<h2>Table Selector Example</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Type</th>
+    </tr>
+    </thead>
+    <thead>
+    <tr>
+        <td><a href="#" class="fruitId">1</a></td>
+        <td>Oranges</td>
+    </tr>
+    <tr>
+        <td><a href="#" class="fruitId">2</a></td>
+        <td>Apples</td>
+    </tr>
+    <tr>
+        <td><a href="#" class="fruitId">3</a></td>
+        <td>Pears</td>
+    </tr>
+    <tr>
+        <td><a href="#" class="fruitId">4</a></td>
+        <td>Limes</td>
+    </tr>
+    <tr>
+        <td><a href="#" class="fruitId">5</a></td>
+        <td>Lemons</td>
+    </tr>
+    </thead>
+</table>
+
+
+<script type="text/javascript">
+    $(function() {
+        $("#toggle").click( () => {$("#toggled-content").toggle()});
+        $(".fruitId").click( function(event){
+            event.preventDefault();
+            var fruitIdNumber = $(this).text();
+            var fruitType = $(this).closest("td").next().text();
+            var alertText = String.prototype.concat("{fruit_Id: ", fruitIdNumber,
+                ", fruit_type: ", fruitType, "}");
+            alert(alertText);    
+        });
+    });
+</script>
+
+</body>
+</html>
